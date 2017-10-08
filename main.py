@@ -15,8 +15,8 @@ TWEET_STR = 'Em {} faz {} graus. Nebulosidade: {} %. Umidade relativa do ar: {} 
 def carrega_config():
 	return json.loads(open('config.json').read())	
 
-def retorna_info_tempo(openweather_key):
-	f = urlopen(WEATHER_URL.format(openweather_key))		
+def retorna_info_tempo(cidade_id, openweather_key):
+	f = urlopen(WEATHER_URL.format(cidade_id, openweather_key))		
 	reader = codecs.getreader("utf-8")
 	return json.load(reader(f))
 
